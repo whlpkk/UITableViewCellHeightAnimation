@@ -20,12 +20,14 @@
     [super viewDidLoad];
     
     self.datasArray = [NSMutableArray array];
-    [self.datasArray addObject:[MyCellModel modelWithNormalHeight:50.f expendHeight:100.f expend:NO]];
-    [self.datasArray addObject:[MyCellModel modelWithNormalHeight:50.f expendHeight:100.f expend:YES]];
-    [self.datasArray addObject:[MyCellModel modelWithNormalHeight:50.f expendHeight:100.f expend:YES]];
-    [self.datasArray addObject:[MyCellModel modelWithNormalHeight:50.f expendHeight:100.f expend:NO]];
-    [self.datasArray addObject:[MyCellModel modelWithNormalHeight:50.f expendHeight:100.f expend:YES]];
-    [self.datasArray addObject:[MyCellModel modelWithNormalHeight:50.f expendHeight:100.f expend:YES]];
+    for (int i=0; i<4; i++) {
+        [self.datasArray addObject:[MyCellModel modelWithNormalHeight:50.f expendHeight:100.f expend:NO]];
+        [self.datasArray addObject:[MyCellModel modelWithNormalHeight:50.f expendHeight:100.f expend:YES]];
+        [self.datasArray addObject:[MyCellModel modelWithNormalHeight:50.f expendHeight:100.f expend:YES]];
+        [self.datasArray addObject:[MyCellModel modelWithNormalHeight:50.f expendHeight:100.f expend:NO]];
+        [self.datasArray addObject:[MyCellModel modelWithNormalHeight:50.f expendHeight:100.f expend:YES]];
+        [self.datasArray addObject:[MyCellModel modelWithNormalHeight:50.f expendHeight:100.f expend:YES]];
+    }
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.delegate       = self;
@@ -33,9 +35,6 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[MyInfoCell class] forCellReuseIdentifier:@"MyInfoCell"];
     [self.view addSubview:self.tableView];
-    [CATransaction begin];
-//    [CATransaction setDisableActions:YES];
-//    [CATransaction commit];
 
 }
 

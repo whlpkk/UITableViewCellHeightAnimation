@@ -32,15 +32,15 @@
     
     self.button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
     [self.button addTarget:self action:@selector(buttonEvent) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:self.button];
+    [self.contentView addSubview:self.button];
     
     self.lineView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 49.5, 320, 1.5f)];
     self.lineView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.5f];
-    [self addSubview:self.lineView];
+    [self.contentView addSubview:self.lineView];
     
     self.infoLabel      = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 50)];
     self.infoLabel.text = @"Demo";
-    [self addSubview:self.infoLabel];
+    [self.contentView addSubview:self.infoLabel];
 }
 
 - (void)buttonEvent {
